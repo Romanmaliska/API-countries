@@ -5,31 +5,39 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/7d28858dc9.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Countries Info</title>
     </head>
     <body>
         <div class="body-container">
             <header>
                 <h1>Where in the world?</h1>
-                <p>Dark Mode</p>
+                <p><i class="fa-regular fa-moon"></i>Dark Mode</p>
             </header>
-            <form>
-                <input
-                    type="text"
-                    name="search"
-                    id="inputSearch"
-                    placeholder="Search for the country..."
-                />
-            </form>
-            <select>
-                <option value="Select">Select</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
+            <section class="search">
+                <form>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        name="search"
+                        id="inputSearch"
+                        placeholder="Search for the country..."
+                    />
+                </form>
+                <select>
+                    <option value="Select">Select All</option>
+                    <option value="Africa" id="africa">Africa</option>
+                    <option value="Americas" id="americas">America</option>
+                    <option value="Asia" id="asia">Asia</option>
+                    <option value="Europe" id="europe">Europe</option>
+                    <option value="Oceania" id="oceania">Oceania</option>
+                </select>
+            </section>
             <main>
+                <div class="countries-container"></div>
             </main>
         </div>
 

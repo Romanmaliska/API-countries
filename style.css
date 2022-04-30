@@ -1,3 +1,5 @@
+/* || GENERAL STYLES */
+
 *,
 ::before,
 ::after {
@@ -8,7 +10,7 @@
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     line-height: 1;
 }
@@ -16,6 +18,9 @@ body {
 .body-container {
     background-color: #F2F2F2;
     color: #111517;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
 }
 
 h1 {
@@ -30,29 +35,54 @@ h2 {
     line-height: 1.625;
 }
 
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+p {
+    margin: 0.5rem 1.5rem;
+}
+
 span {
     font-weight: 200;
 }
 
+/*  || HEADER */
+
 header {
     background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
     padding: 1.875rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header p {
-    font-size: 0.75rem;
+@media (min-width: 744px) {
+    header {
+        padding: 1.5rem 5rem;
+    }
 }
+
+header i {
+    padding-right: 0.5rem;
+}
+
+/* || INPUT FIELD STYLES */
 
 form {
     background-color: #FFFFFF;
-    margin: 1.5rem 1rem 2.5rem 1rem;
-    padding: 0.875rem 1.5rem;
+    padding: 0.875rem 1.5rem 0.875rem 2rem;
+    margin-bottom: 2.5rem;
     border-radius: 5px;
     box-shadow: 0px 2px 9px 0px #0000000E;
     max-width: 30rem;
+}
+
+form i {
+    color: #C4C4C4;
 }
 
 input {
@@ -60,45 +90,141 @@ input {
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 0.8;
+    margin-left: 2rem;
     border: none;
 }
 
+/* || SELECT FIELD STYLES */
+
 select {
+    box-shadow: 0px 2px 9px 0px #0000000E;
+    border: none;
+    border-radius: 5px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1;
-    margin: 0 1rem 2rem 1rem;
     padding: 0.875rem 1.5rem;
+}
+
+button {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+    border-radius: 2px;
     border: none;
-    border-radius: 5px;
-    box-shadow: 0px 2px 9px 0px #0000000E;
+    color: #111517;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-main {
-    
-    display: grid;
+@media (min-width: 744px) {
+    select {
+        margin-bottom: 2.5rem;
+    }
 }
 
-.country {
-    background: #FFFFFF;
-    margin: 0 3.5rem 3rem 3.5rem;
-    width: 264px;
-    height: 336px;
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
-    border-radius: 5px;
+.search {
+    margin: 1.5rem 1rem 2rem 1rem;
 }
 
-.country p{
-    margin: 0.5rem 1.5rem;
+@media (min-width: 744px) {
+    .search {
+        display: flex;
+        justify-content: space-between;
+        margin: 1.5rem 5rem;
+    }
 }
 
-.country h2{
-    margin: 1.5rem 1.5rem 1rem 1.5rem;
+/* || COUNTRIES CONTAINER STYLES */
+
+.countries-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
 }
 
-img{
+@media (min-width: 744px) {
+    .countries-container {
+        margin-left: 3.25rem;
+        margin-right: 3.25rem;
+    }
+}
+
+.flag {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     object-fit: cover;
+}
+
+.country {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
+    border-radius: 5px;
+    margin: 0 1.75rem 3rem 1.75rem;
+    width: 264px;
+    min-height: 336px;
+}
+
+.country h2 {
+    margin: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.country a {
+    color: #111517;
+    text-decoration: none;
+}
+
+
+/* || DETAIL PAGE STYLING */
+
+.backBtn {
+    padding: 0.375rem 1.5rem;
+    margin: 2.5rem 1.75rem 4.375rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.25;
+    width: 104px;
+    height: 32px;
+}
+
+.backBtn i {
+    margin-right: 0.5rem;
+}
+
+.detail-container {
+    margin: 0 1.75rem 2.5rem 1.75rem;
+}
+
+.detail-container .flag {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.detail-container h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.detail-container p {
+    margin: 0.5rem 0;
+}
+
+.top {
+    margin-bottom: 2rem;
+}
+
+.border-container {
+    margin: 0 1.75rem 2.5rem 1.75rem;
+    padding-bottom: 4.375rem;
+}
+
+.border-container button {
+    margin: 0 0.625rem 0.625rem 0;
+    min-width: 96px;
+    height: 28px;
+}
+
+h3 {
+    margin: 0 1.75rem 1rem 1.75rem;
 }
