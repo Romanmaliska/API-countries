@@ -11,7 +11,6 @@ searchCountryCode();
 fetch(`https://restcountries.com/v2/alpha/${countryCode}`)
     .then((result) => result.json())
     .then((output) => {
-        console.log(typeof(output.population));
         displayCountryDetail(output);
         displayBorderCountry(output);
     })
@@ -21,27 +20,50 @@ const detailContainer = document.querySelector(".detail-container");
 
 const displayCountryDetail = (output) => {
     const showDetail = `
-                <img src=${output.flag} class="flag" alt"" width="264" height="160">
-                <h2>${output.name}</h2>
-                <div class="top">
-                <p>Native Name: <span>${output.nativeName}</span></p>
-                <p>Population: <span>${output.population.toLocaleString()}</span></p>
-                <p>Region: <span>${output.region}</span></p>
-                <p>SubRegion: <span>${output.subregion}</span></p>
-                <p>Capital: <span>${output.capital}</span></p>
+                <div class="flag-container">
+                <img src=${
+                    output.flag
+                } class="flag" alt="" width="264" height="160">
                 </div>
-                <p>Top Level Domain: <span>${output.topLevelDomain}</span></p>
-                <p>Currencies: <span>${output.currencies.map((currency) =>  currency.name).join(", ")}</span></p>
-                <p>Languages: <span>${output.languages.map((language) =>  language.name).join(", ")}</span></p>`;
+                
+                <div class="top-details">
+                <h2>${output.name}</h2>
+                <p>Native Name: <span>${output.nativeName}</span></p>
+                <p>Population: <span>${
+                    output.population
+                        ? output.population.toLocaleString()
+                        : "no data"
+                }</span></p>
+                <p>Region: <span>${output.region}</span></p>
+                <p>SubRegion: <span>${
+                    output.subregion ? output.subregion : "no data"
+                }</span></p>
+                <p>Capital: <span>${
+                    output.capital ? output.capital : "no data"
+                }</span></p>
+                </div>
+
+                <div class="bottom-details">
+                <p>Top Level Domain: <span>${
+                    output.topLevelDomain ? output.topLevelDomain : "no data"
+                }</span></p>
+                <p>Currencies: <span>${
+                    output.currencies
+                        ? output.currencies
+                              .map((currency) => currency.name)
+                              .join(", ")
+                        : "no data"
+                }</span></p>
+                <p>Languages: <span>${
+                    output.languages
+                        ? output.languages
+                              .map((language) => language.name)
+                              .join(", ")
+                        : "no data"
+                }</span></p>
+                </div>`;
     detailContainer.innerHTML = showDetail;
 };
-
-
-/* Back button function */
-
-const backBtn = document.querySelector(".backBtn");
-
-backBtn.addEventListener("click", () => (window.location.href = "index.html"));
 
 /* Border buttons function */
 
@@ -49,11 +71,19 @@ const borderCountryBtn = document.querySelector(".border-container");
 
 const displayBorderCountry = (output) => {
     const showBtn = output.borders
-        .map((border) => {
-            return `
-            <a href="detail.html?countryCode=${border}"><button type="button" class="btn">${border}</button></a>`;
-        })
-        .join("");
+        ? output.borders
+              .map((border) => {
+                  return `
+        <a href="detail.html?countryCode=${border}"><button type="button" class="btn">${border}</button></a>`;
+              })
+              .join("")
+        : `<p>${output.name} has no border country.</p>`;
 
-    borderCountryBtn.innerHTML = showBtn;
+    borderCountryBtn.innerHTML = `<h3>Border Countries:</h3> ${showBtn}`;
 };
+
+/* Back button function */
+
+const backBtn = document.querySelector(".backBtn");
+
+backBtn.addEventListener("click", () => (window.location.href = "index.html"));

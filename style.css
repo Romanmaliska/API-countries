@@ -9,6 +9,8 @@
 }
 
 body {
+    background-color: #F2F2F2;
+    color: #111517;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
@@ -16,8 +18,6 @@ body {
 }
 
 .body-container {
-    background-color: #F2F2F2;
-    color: #111517;
     margin-left: auto;
     margin-right: auto;
     max-width: 90rem;
@@ -60,7 +60,7 @@ header {
     align-items: center;
 }
 
-@media (min-width: 744px) {
+@media (min-width: 640px) {
     header {
         padding: 1.5rem 5rem;
     }
@@ -116,7 +116,7 @@ button {
     font-family: 'Nunito Sans', sans-serif;
 }
 
-@media (min-width: 744px) {
+@media (min-width: 640px) {
     select {
         margin-bottom: 2.5rem;
     }
@@ -126,7 +126,7 @@ button {
     margin: 1.5rem 1rem 2rem 1rem;
 }
 
-@media (min-width: 744px) {
+@media (min-width: 640px) {
     .search {
         display: flex;
         justify-content: space-between;
@@ -139,12 +139,11 @@ button {
 .countries-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-left: 1.75rem;
-    margin-right: 1.75rem;
+    justify-content: start;
+
 }
 
-@media (min-width: 744px) {
+@media (min-width: 640px) {
     .countries-container {
         margin-left: 3.25rem;
         margin-right: 3.25rem;
@@ -163,18 +162,17 @@ button {
     border-radius: 5px;
     margin: 0 1.75rem 3rem 1.75rem;
     width: 264px;
-    min-height: 336px;
+    height: 336px;
 }
 
 .country h2 {
-    margin: 1.5rem 1.5rem 1rem 1.5rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
 }
 
 .country a {
     color: #111517;
     text-decoration: none;
 }
-
 
 
 /* || DETAIL PAGE STYLING */
@@ -189,6 +187,13 @@ button {
     height: 32px;
 }
 
+
+@media (min-width: 640px) {
+    .backBtn {
+        margin: 5rem;
+    }
+}
+
 .backBtn i {
     margin-right: 0.5rem;
 }
@@ -197,9 +202,23 @@ button {
     margin: 0 1.75rem 2.5rem 1.75rem;
 }
 
+@media (min-width: 640px) {
+    .detail-container {
+        margin: 0 16rem 2.5rem 5rem;
+    }
+}
+
 .detail-container .flag {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+
+@media (min-width: 640px) {
+    .detail-container .flag {
+        max-width: 560px;
+        max-height: 368px;
+    }
 }
 
 .detail-container h2 {
@@ -211,7 +230,7 @@ button {
     margin: 0.5rem 0;
 }
 
-.top {
+.top-details {
     margin-bottom: 2rem;
 }
 
@@ -220,12 +239,14 @@ button {
     padding-bottom: 4.375rem;
 }
 
-.border-container button {
-    margin: 0 0.625rem 0.625rem 0;
-    min-width: 96px;
-    height: 28px;
+@media (min-width: 640px) {
+    .border-container{
+        margin: 1rem 5rem;
+    }
 }
 
-h3 {
-    margin: 0 1.75rem 1rem 1.75rem;
+.border-container button {
+    margin: 1rem 0.625rem 0.625rem 0;
+    min-width: 96px;
+    height: 28px;
 }

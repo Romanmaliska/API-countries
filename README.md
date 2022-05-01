@@ -1,3 +1,3 @@
 # API-countries
 
-REST Countries API with color theme switcher
+REST Countries app with color theme switcher
