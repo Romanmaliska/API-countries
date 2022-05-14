@@ -12,22 +12,25 @@
         <title>Details</title>
     </head>
     <body>
-        <div class="body-container">
-            <header>
-                <h1>Where in the world?</h1>
-                <p><i class="fa-regular fa-moon"></i>Dark Mode</p>
+        <div class="body__wrapper">
+            <header class="header">
+                <a href="index.html"><h1>Where in the world?</h1></a>
+                <div>
+                    <i class="js-switcher-btn__icon fa-solid fa-moon"></i>
+                    <button type="button" class="js-switcher-btn">
+                        Dark Mode
+                    </button>
+                </div>
             </header>
             <main>
-                <button type="button" class="backBtn">
-                    <i class="fa-solid fa-arrow-left-long"></i>Back
+                <button type="button" class="btn js-back-btn">
+                    <i class="js-back-btn__icon fa-solid fa-arrow-left-long"></i
+                    >Back
                 </button>
-                <div class="detail-border-container">
-                    <div class="detail-container"></div>
-                    <div class="border-container"></div>
-                </div>
+                <div class="js-detail-grid"></div>
             </main>
         </div>
-
         <script type="text/javascript" src="detail.js"></script>
+        <script type="text/javascript" src="themeToggler.js"></script>
     </body>
 </html>

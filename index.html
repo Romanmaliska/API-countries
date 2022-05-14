@@ -12,23 +12,29 @@
         <title>Countries Info</title>
     </head>
     <body>
-        <div class="body-container">
-            <header>
-                <h1>Where in the world?</h1>
-                <p><i class="fa-regular fa-moon"></i>Dark Mode</p>
+        <div class="body__wrapper">
+            <header class="header">
+                <a href="index.html"><h1>Where in the world?</h1></a>
+                <div>
+                    <i class="js-switcher-btn__icon fa-solid fa-moon"></i>
+                    <button type="button" class="js-switcher-btn">
+                        Dark Mode
+                    </button>
+                </div>
             </header>
-            <section class="search">
-                <form>
-                    <i class="fa-solid fa-magnifying-glass"></i>
+            <section class="search__grid">
+                <form class="form">
+                    <i class="form__icon fa-solid fa-magnifying-glass"></i>
                     <input
+                        class="form__input"
                         type="text"
                         name="search"
                         id="inputSearch"
                         placeholder="Search for the country..."
                     />
                 </form>
-                <select>
-                    <option value="Select">Select All</option>
+                <select class="select">
+                    <option value="">Select All</option>
                     <option value="Africa" id="africa">Africa</option>
                     <option value="Americas" id="americas">America</option>
                     <option value="Asia" id="asia">Asia</option>
@@ -37,10 +43,11 @@
                 </select>
             </section>
             <main>
-                <div class="countries-container"></div>
+                <div class="js-countries-grid"></div>
             </main>
         </div>
 
-        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="themeToggler.js"></script>
     </body>
 </html>
