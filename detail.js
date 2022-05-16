@@ -94,7 +94,7 @@ const displayCountryDetail = async (output) => {
                             .map((border) => {
                                 return `
                 <a href="detail.html?countryCode=${border.alpha3Code}">
-                                <button type="button" class="btn js-border__btn">${border.name}</button>
+                                <button type="button" class="btn js-border__btn hover">${border.name}</button>
                                 </a>`;
                             })
                             .join("")}

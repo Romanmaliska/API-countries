@@ -31,7 +31,7 @@ body {
     line-height: 1;
 }
 
-.body__wrapper {
+.body-wrapper {
     margin-left: auto;
     margin-right: auto;
     max-width: 90rem;
@@ -70,6 +70,10 @@ a {
     text-decoration: none;
 }
 
+.hover{
+    cursor: pointer;
+}
+
 /*  || HEADER */
 
 .header {
@@ -87,26 +91,25 @@ a {
     }
 }
 
-.js-switcher-btn__icon {
-    padding-right: 0.5rem;
-}
-
-
-.js-switcher-btn{
-    background-color: var(--el-bg-color);
-    color: var(--font-color);
+.toggler__text {
+    display: inline-block;
     font-size: 0.75rem;
     font-weight: 600;
     line-height: 1;
-    border: 0;
+
 }
 
 @media  (min-width: 1440px) {
-    .js-switcher-btn{
+    .toggler__text{
         font-size: 1rem;
         line-height: 1.375;
     }
+} 
+
+.toggler__icon {
+    padding-right: 0.5rem;
 }
+
 
 /* || INPUT AND SELECT STYLES */
 
@@ -137,6 +140,7 @@ a {
 
 .form__input {
     background-color: var(--el-bg-color);
+    color: var(--font-color);
     font-family: 'Nunito Sans', sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
@@ -182,7 +186,7 @@ a {
     }
 }
 
-.js-country-wrapper {
+.js-country {
     background-color: var(--el-bg-color);
     box-shadow: 0px 0px 7px 2px #00000007;
     border-radius: 5px;
@@ -190,18 +194,18 @@ a {
     height: 368px;
 }
 
-.js-country-wrapper__flag {
+.js-country__flag {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 
-.js-country-wrapper__head {
+.js-country__head {
     padding: 1.5rem 1.5rem 1rem 1.5rem;
     color: var(--font-color);
 }
 
-.js-country-wrapper__text {
+.js-country__text {
     margin: 0.5rem 1.5rem;
     color: var(--font-color);
 }
@@ -219,7 +223,7 @@ a {
 
 .js-back-btn {
     padding: 0.375rem 1.5rem;
-    margin: 2.5rem 1.75rem 4.375rem 1.75rem;
+    margin: 2.5rem 1.75rem 4.375rem 5rem;
     font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.25;

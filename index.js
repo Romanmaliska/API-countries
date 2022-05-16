@@ -4,7 +4,7 @@ fetch("https://restcountries.com/v2/all")
     .then((result) => result.json())
     .then((output) => {
         outputCountries = output;
-        displayCountries(output);
+        searchCountry();
     })
     .catch((err) => console.error(err));
 
@@ -16,17 +16,17 @@ const displayCountries = (output) => {
     const showCountries = output
         .map((country) => {
             return `
-        <div class="js-country-wrapper">
+        <div class="js-country">
         <a href="/detail.html?countryCode=${country.alpha3Code}">
                 <img src=${
                     country.flag
-                } class="js-country-wrapper__flag" alt="" width="264" height="160">
-                <h2 class="js-country-wrapper__head">${country.name}</h2>
-                <p class="js-country-wrapper__text">Population: <span>${country.population.toLocaleString()}</span></p>
-                <p class="js-country-wrapper__text">Region: <span>${
+                } class="js-country__flag" alt="" width="264" height="160">
+                <h2 class="js-country__head">${country.name}</h2>
+                <p class="js-country__text">Population: <span>${country.population.toLocaleString()}</span></p>
+                <p class="js-country__text">Region: <span>${
                     country.region
                 }</span></p>
-                <p class="js-country-wrapper__text">Capital: <span>${
+                <p class="js-country__text">Capital: <span>${
                     country.capital
                 }</span></p>
                 </a>
