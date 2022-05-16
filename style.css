@@ -43,7 +43,7 @@ h1 {
     line-height: 1.25;
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
     h1 {
         font-size: 1rem;
         line-height: 1.375;
@@ -70,7 +70,7 @@ a {
     text-decoration: none;
 }
 
-.hover{
+.hover {
     cursor: pointer;
 }
 
@@ -99,12 +99,12 @@ a {
 
 }
 
-@media  (min-width: 1440px) {
-    .toggler__text{
+@media (min-width: 1440px) {
+    .toggler__text {
         font-size: 1rem;
         line-height: 1.375;
     }
-} 
+}
 
 .toggler__icon {
     padding-right: 0.5rem;
@@ -159,8 +159,15 @@ a {
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1;
-    padding: 0.875rem 1.5rem;
+    padding: 0.875rem 4rem 0.875rem 1.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: 6.5rem;
 }
+
 
 @media (min-width: 736px) {
     .select {

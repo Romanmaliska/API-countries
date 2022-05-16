@@ -12,31 +12,6 @@ fetch("https://restcountries.com/v2/all")
 
 const countriesContainer = document.querySelector(".js-countries-grid");
 
-const displayCountries = (output) => {
-    const showCountries = output
-        .map((country) => {
-            return `
-        <div class="js-country">
-        <a href="/detail.html?countryCode=${country.alpha3Code}">
-                <img src=${
-                    country.flag
-                } class="js-country__flag" alt="" width="264" height="160">
-                <h2 class="js-country__head">${country.name}</h2>
-                <p class="js-country__text">Population: <span>${country.population.toLocaleString()}</span></p>
-                <p class="js-country__text">Region: <span>${
-                    country.region
-                }</span></p>
-                <p class="js-country__text">Capital: <span>${
-                    country.capital
-                }</span></p>
-                </a>
-                </div>
-                `;
-        })
-        .join("");
-    countriesContainer.innerHTML = showCountries;
-};
-
 /* Input field element and select element function to filter countries */
 
 const selectRegion = document.querySelector("select");
@@ -66,9 +41,27 @@ const searchCountry = () => {
         );
     }
 
-    displayCountries(searchResult);
+    const showCountries = searchResult
+        .map((country) => {
+            return `
+            <div class="js-country">
+                <a href="/detail.html?countryCode=${country.alpha3Code}">
+                    <img src=${country.flag}
+                        class="js-country__flag" alt="" width="264" height="160">
+                    <h2 class="js-country__head">${country.name}</h2>
+                    <p class="js-country__text">Population: <span>${country.population.toLocaleString()}</span></p>
+                    <p class="js-country__text">Region: 
+                        <span>${country.region}</span></p>
+                    <p class="js-country__text">Capital: 
+                        <span>${country.capital}</span></p>
+                </a>
+            </div>
+            `;
+        })
+        .join("");
+
+    countriesContainer.innerHTML = showCountries;
 };
 
 inputSearch.addEventListener("input", searchCountry);
 selectRegion.addEventListener("change", searchCountry);
-

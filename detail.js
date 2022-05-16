@@ -40,65 +40,61 @@ const displayCountryDetail = async (output) => {
     );
 
     const showDetail = `
-            <div class="js-flag-wrapper">
-                <img src=${
-                    output.flag
-                } class="js-flag" alt="" width="320" height="275">
-            </div>
-                        
-            <div class="js-header-wrapper">
-                <h2 class="js-header">${output.name}</h2>
-            </div>
-            
-            <div class="js-text-wrapper">
-                <p class="js-text">Native Name: <span>${
-                    output.nativeName
-                }</span></p>
-                <p class="js-text">Population: <span>${
-                    output.population
-                        ? output.population.toLocaleString()
-                        : "no data"
-                }</span></p>
-                <p class="js-text">Region: <span>${output.region}</span></p>
-                <p class="js-text">SubRegion: <span>${
-                    output.subregion || "no data"
-                }</span></p>
-                <p class="js-text">Capital: <span>${
-                    output.capital || "no data"
-                }</span></p>
-            </div>
-                        
-            <div class="js-text-wrapper">
-                <p class="js-text">Top Level Domain: <span>${
-                    output.topLevelDomain || "no data"
-                }</span></p>
-                <p class="js-text">Currencies: <span>${
-                    output.currencies
-                        ? output.currencies
-                              .map((currency) => currency.name)
-                              .join(", ")
-                        : "no data"
-                }</span></p>
-                <p class="js-text">Languages: <span>${
-                    output.languages
-                        ? output.languages
-                              .map((language) => language.name)
-                              .join(", ")
-                        : "no data"
-                }</span></p>
-            </div>
-           
-            <div class="js-border-wrapper">
-                <h3 class="js-border__header">Border Countries:</h3>
-                        ${borderCountries
-                            .map((border) => {
-                                return `
-                <a href="detail.html?countryCode=${border.alpha3Code}">
-                                <button type="button" class="btn js-border__btn hover">${border.name}</button>
-                                </a>`;
-                            })
-                            .join("")}
-            </div>`;
+        <div class="js-flag-wrapper">
+            <img src=${
+                output.flag
+            } class="js-flag" alt="" width="320" height="275">
+        </div>       
+        <div class="js-header-wrapper">
+            <h2 class="js-header">${output.name}</h2>
+        </div>
+        <div class="js-text-wrapper">
+            <p class="js-text">Native Name: <span>${
+                output.nativeName
+            }</span></p>
+            <p class="js-text">Population: <span>${
+                output.population
+                    ? output.population.toLocaleString()
+                    : "no data"
+            }</span></p>
+            <p class="js-text">Region: <span>${output.region}</span></p>
+            <p class="js-text">SubRegion: <span>${
+                output.subregion || "no data"
+            }</span></p>
+            <p class="js-text">Capital: <span>${
+                output.capital || "no data"
+            }</span></p>
+        </div>         
+        <div class="js-text-wrapper">
+            <p class="js-text">Top Level Domain: <span>${
+                output.topLevelDomain || "no data"
+            }</span></p>
+            <p class="js-text">Currencies: <span>${
+                output.currencies
+                    ? output.currencies
+                          .map((currency) => currency.name)
+                          .join(", ")
+                    : "no data"
+            }</span></p>
+            <p class="js-text">Languages: <span>${
+                output.languages
+                    ? output.languages
+                          .map((language) => language.name)
+                          .join(", ")
+                    : "no data"
+            }</span></p>
+        </div>
+        <div class="js-border-wrapper">
+            <h3 class="js-border__header">Border Countries:</h3>
+                 ${borderCountries
+                     .map((border) => {
+                         return `
+            <a href="detail.html?countryCode=${border.alpha3Code}">
+                <button type="button" class="btn js-border__btn hover">${border.name}</button>
+            </a>`;
+                     })
+                     .join("")}
+        </div>`;
 
     detailContainer.innerHTML = showDetail;
 };
