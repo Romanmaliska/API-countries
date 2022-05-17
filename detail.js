@@ -89,7 +89,7 @@ const displayCountryDetail = async (output) => {
                  ${borderCountries
                      .map((border) => {
                          return `
-            <a href="detail.html?countryCode=${border.alpha3Code}">
+            <a href="https://romanmaliska.github.io/API-countries/detail.htm?countryCode=${border.alpha3Code}">
                 <button type="button" class="btn js-border__btn hover">${border.name}</button>
             </a>`;
                      })
