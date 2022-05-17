@@ -1,35 +1,30 @@
-const toggler = document.querySelector(".toggler");
-const text = document.querySelector(".toggler__text");
-const icon = document.querySelector(".toggler__icon");
+const toggler = document.querySelector(".js-toggler");
+const text = document.querySelector(".js-toggler__text");
+const icon = document.querySelector(".js-toggler__icon");
 const rootClassList = document.documentElement.classList;
 const currentTheme = localStorage.getItem("theme");
-const OSThemeSetting = window.matchMedia("(prefers-color-scheme: dark)");
+const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-
-if (OSThemeSetting.matches && !localStorage.theme) {
+if ((prefersDarkTheme.matches && !currentTheme) || currentTheme == "dark-mode") {
     rootClassList.add("dark-mode");
     text.textContent = "Light Mode";
     icon.classList.replace("fa-solid", "fa-regular");
-} else if (!localStorage.theme) {
-      rootClassList.add("light-mode");
-      text.textContent = "Dark Mode";
-      icon.classList.replace("fa-regular", "fa-solid");
-  }
-  else{
-    rootClassList.add(localStorage.theme);
-  }
-    
-  toggler.addEventListener("click", function () {
-        if (rootClassList.value == "light-mode") {
-              rootClassList.replace("light-mode", "dark-mode");
-              localStorage.setItem("theme", "dark-mode");
-              text.textContent = "Light Mode";
+} else {
+    rootClassList.add("light-mode");
+    text.textContent = "Dark Mode";
+    icon.classList.replace("fa-regular", "fa-solid");
+}
+
+toggler.addEventListener("click", function () {
+    if (rootClassList.contains("light-mode")) {
+        rootClassList.replace("light-mode", "dark-mode");
+        localStorage.setItem("theme", "dark-mode");
+        text.textContent = "Light Mode";
         icon.classList.replace("fa-solid", "fa-regular");
     } else {
-          rootClassList.replace("dark-mode", "light-mode");
-          localStorage.setItem("theme", "light-mode");
-          text.textContent = "Dark Mode";
-          icon.classList.replace("fa-regular", "fa-solid");
-      }
-  });
-  
+        rootClassList.replace("dark-mode", "light-mode");
+        localStorage.setItem("theme", "light-mode");
+        text.textContent = "Dark Mode";
+        icon.classList.replace("fa-regular", "fa-solid");
+    }
+});
