@@ -45,7 +45,7 @@ const searchCountry = () => {
         .map((country) => {
             return `
             <div class="js-country">
-                <a href="/detail.html?countryCode=${country.alpha3Code}">
+                <a href="https://romanmaliska.github.io/API-countries/detail.html?countryCode=${country.alpha3Code}">
                     <img src=${country.flag}
                         class="js-country__flag" alt="" width="264" height="160">
                     <h2 class="js-country__head">${country.name}</h2>
