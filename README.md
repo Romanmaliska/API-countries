@@ -10,4 +10,4 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- Restfull API https://restcountries.com/#rest-countries
+- Restful API https://restcountries.com/#rest-countries
